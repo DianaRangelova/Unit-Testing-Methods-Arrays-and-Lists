@@ -50,12 +50,12 @@ public class ReverserTests
     public void Test_ReverseStrings_WithSpecialCharacters_ReturnsReversedSpecialCharacters()
     {
         // Arrange
-        string[] inputArray = { "/@?!" };
+        string[] inputArray = { "Hello!", "@Didika#", "Take it easy!" };
 
         // Act
         string[] result = Reverser.ReverseStrings(inputArray);
 
         // Assert
-        Assert.That(result, Is.EqualTo(new[] { "!?@/" }));
+        Assert.That(result, Is.EqualTo(new[] { "!olleH", "#akidiD@", "!ysae ti ekaT" }));
     }
 }
