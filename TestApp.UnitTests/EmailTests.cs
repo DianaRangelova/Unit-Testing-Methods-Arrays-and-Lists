@@ -9,13 +9,13 @@ public class EmailTests
     public void Test_IsValidEmail_ValidEmail()
     {
         // Arrange
-        string email = "didika@abv.bg";
+        string validEmail = "didika@abv.bg";
 
         // Act
-        bool result = Email.IsValidEmail(email);
+        bool isValid = Email.IsValidEmail(validEmail);
 
         // Assert
-        Assert.That(result, Is.True);
+        Assert.IsTrue(isValid);
     }
 
     [Test]
@@ -25,22 +25,22 @@ public class EmailTests
         string invalidEmail = "didka";
 
         // Act
-        bool result = Email.IsValidEmail(invalidEmail);
+        bool isValid = Email.IsValidEmail(invalidEmail);
 
         // Assert
-        Assert.IsFalse(result);
+        Assert.IsFalse(isValid);
     }
 
     [Test]
     [TestCase(null)]
     [TestCase("")]
     [TestCase("     ")]
-    public void Test_IsValidEmail_NullInput(string email)
+    public void Test_IsValidEmail_NullInput(string nullEmail)
     {
         // Act
-        bool result = Email.IsValidEmail(email);
+        bool isValid = Email.IsValidEmail(nullEmail);
 
         // Assert
-        Assert.IsFalse(result);
+        Assert.IsFalse(isValid);
     }
 }
